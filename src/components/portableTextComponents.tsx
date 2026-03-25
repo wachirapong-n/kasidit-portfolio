@@ -1,4 +1,4 @@
-
+import { urlFor } from "@/libs/utils";
 
 export const portableTextComponents = {
   block: {
@@ -36,6 +36,32 @@ export const portableTextComponents = {
       <a href={value?.href} className="text-blue-500 underline">
         {children}
       </a>
+    ),
+  },
+
+  types: {
+    image: ({ value }: any) => (
+      <img src={urlFor(value).url()} className="my-6 rounded-lg" alt="" />
+    ),
+
+    subtitleSection: ({ value }: any) => (
+      <div className="my-6">
+        <h2 className="text-2xl font-bold">{value.subtitle}</h2>
+        <p className="text-gray-600 mt-2">{value.description}</p>
+      </div>
+    ),
+
+    gallery: ({ value }: any) => (
+      <div className="grid grid-cols-2 gap-4 my-6">
+        {value.images?.map((img: any) => (
+          <img
+            key={img._key}
+            src={urlFor(img).url()}
+            className="rounded-lg"
+            alt=""
+          />
+        ))}
+      </div>
     ),
   },
 };

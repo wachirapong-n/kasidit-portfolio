@@ -4,10 +4,7 @@ import Link from "next/link";
 import Container from "@/components/container";
 import { portableTextComponents } from "@/components/portableTextComponents";
 import { client } from "@/sanity/client";
-
-const POSTS_QUERY = `*[
-  _type == "post"
-  ]|order(publishedAt desc){_id, title, "imageUrl": image.asset->url, descripion}`;
+import { POSTS_QUERY } from "./server/queries/queries";
 
 const options = { next: { revalidate: 30 } };
 
@@ -15,12 +12,12 @@ export default async function IndexPage() {
   const posts = await client.fetch<SanityDocument[]>(POSTS_QUERY, {}, options);
 
   return (
-    <Container>
-      <main className="container mx-auto min-h-screen max-w-3xl p-8">
+    <Container className="justify-center py-0">
+      <main className="relative p-8">
         <ul className="flex flex-col gap-y-4">
-          {posts.map((post) => (
+          {posts?.map((post) => (
             <li key={post._id}>
-              <Link href={`/${post._id}`}>
+              <Link href={`/${post.slug.current}`}>
                 <h2 className="text-xl font-semibold hover:underline">
                   {post.title}
                 </h2>

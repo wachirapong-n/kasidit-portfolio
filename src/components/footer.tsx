@@ -8,7 +8,7 @@ export default async function Footer() {
   const footer = await client.fetch<SanityDocument>(POST_QUERY);
   const footerData = footer[0];
   return (
-    <Container className="bg-red-200 justify-between text-lg">
+    <Container className="bg-red-200 text-lg">
       <div className="flex flex-col w-full">
         <p>{footerData.name}</p>
         <p>{footerData.addition}</p>
