@@ -31,10 +31,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${noto.variable}  h-full antialiased`}>
+    <html lang="en" className={`${noto.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col">
         <Navbar />
-        <main className="flex grow bg-[#ffffff] px-5 ">{children}</main>
+        <main className="grow bg-[#F8FAFC] px-5 flex flex-col items-stretch">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>

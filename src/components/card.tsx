@@ -1,6 +1,6 @@
 import { cn } from "@/libs/utils";
 
-interface CardProps {
+export interface CardProps {
   title: string;
   imageUrl?: string;
   description?: string;
@@ -18,7 +18,7 @@ export default function Card({
   return (
     <div
       className={cn(
-        "group min-w-60 mx-auto max-w-7xl flex flex-col py-4 px-4 md:px-6 rounded-3xl bg-red-100 w-full gap-5 transition-all duration-300 hover:bg-red-50",
+        "group mx-auto min-w-60 max-w-7xl flex flex-col py-4 px-4 md:px-6 rounded-3xl bg-[#ffffff] w-full gap-5 transition-all duration-300 hover:bg-red-50 ",
         className,
       )}
     >
@@ -27,7 +27,9 @@ export default function Card({
           <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-semibold">
             {title}
           </h2>
-          <p className="text-xs md:text-base lg:text-xl xl:text-2xl">{description ?? ""}</p>
+          <p className="text-xs md:text-base lg:text-xl xl:text-2xl">
+            {description ?? ""}
+          </p>
         </div>
         {arrow && (
           <svg

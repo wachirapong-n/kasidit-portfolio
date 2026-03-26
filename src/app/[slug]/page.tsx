@@ -20,7 +20,7 @@ export default async function PostPage({
 
   return (
     <Container className="justify-center ">
-      <div className="min-h-screen w-full p-8 flex flex-col gap-4 ">
+      <div className="min-h-screen w-full p-8 flex flex-col gap-4">
         <Link href="/" className="hover:underline">
           ← ย้อนกลับ
         </Link>
