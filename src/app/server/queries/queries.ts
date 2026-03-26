@@ -1,4 +1,4 @@
-export const POSTS_QUERY = `*[_type == "post"] | order(publishedAt desc){_id, title, "imageUrl": image.asset->url, descripion, slug}`;
+export const POSTS_QUERY = `*[_type == "post"] | order(publishedAt desc){_id, title, "imageUrl": image.asset->url, description, slug}`;
 export const POST = `*[_type == "post" && slug.current == $slug][0]{ _id, title, slug, content }`;
 export const WEBSITE_NAME = `*[_type == "websiteName"]{websiteName}`;
 export const LOGO = `*[_type == "logo"]{logo}`;
@@ -13,3 +13,4 @@ export const NAV_QUERY = `*[_type == "category" && !(_id in path("drafts.**"))] 
     "slug": slug.current 
   }
 }`;
+export const FOOTER = `*[_type == "footer"]`;

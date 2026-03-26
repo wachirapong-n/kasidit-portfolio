@@ -28,7 +28,8 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
-    "**/*.mts"
-, "src/components/portableTextComponents.tsx"  ],
+    "**/*.mts",
+    "src/app/server/serializers/portableTextSerializer.tsx"
+  ],
   "exclude": ["node_modules"]
 }

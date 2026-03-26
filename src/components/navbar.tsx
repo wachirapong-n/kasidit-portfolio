@@ -18,8 +18,8 @@ export default async function Navbar() {
   const navQuery = await client.fetch<SanityDocument[]>(NAV_QUERY, {}, options);
 
   return (
-    <Container className="bg-red-200 items-center">
-      <div className="flex w-full gap-5 items-center">
+    <Container className="bg-[#171717] items-center text-white">
+      <div className="flex w-full gap-5 items-center ">
         <div className="flex w-8 h-8">
           <Link href={`/`}>
             <img
@@ -29,7 +29,7 @@ export default async function Navbar() {
           </Link>
         </div>
         <Link href={`/`}>
-          <div className="items-center gap-1 font-medium text-gray-700 hover:text-blue-600 transition-colors py-2">
+          <div className="items-center gap-1 font-medium  hover:text-blue-600 transition-colors py-2">
             {webName[0].websiteName}
           </div>
         </Link>
@@ -37,9 +37,9 @@ export default async function Navbar() {
       <div className="flex w-full gap-5 justify-end">
         <Link
           href={`/`}
-          className="font-medium text-gray-700 hover:text-blue-600 transition-colors"
+          className="font-medium  hover:text-blue-600 transition-colors"
         >
-          <div className="items-center gap-1 font-medium text-gray-700 hover:text-blue-600 transition-colors py-2">
+          <div className="items-center gap-1 font-medium  hover:text-blue-600 transition-colors py-2">
             หน้าแรก
           </div>
         </Link>
@@ -48,7 +48,7 @@ export default async function Navbar() {
             key={category._id}
             className="group relative flex items-center h-full"
           >
-            <button className="flex items-center gap-1 font-medium text-gray-700 hover:text-blue-600 transition-colors py-2">
+            <button className="flex items-center gap-1 font-medium hover:text-blue-600 transition-colors py-2">
               {category.title}
               <svg
                 className="w-4 h-4 transition-transform group-hover:rotate-180"

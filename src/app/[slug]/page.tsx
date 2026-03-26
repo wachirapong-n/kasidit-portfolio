@@ -1,7 +1,7 @@
 import { PortableText } from "next-sanity";
 
+import { portableTextComponents } from "@/app/server/serializers/portableTextSerializer";
 import Container from "@/components/container";
-import { portableTextComponents } from "@/components/portableTextComponents";
 import { client } from "@/sanity/client";
 import Link from "next/link";
 import { POST } from "../server/queries/queries";
@@ -20,7 +20,7 @@ export default async function PostPage({
 
   return (
     <Container className="justify-center ">
-      <main className="min-h-screen w-full p-8 flex flex-col gap-4 ">
+      <div className="min-h-screen w-full p-8 flex flex-col gap-4 ">
         <Link href="/" className="hover:underline">
           ← ย้อนกลับ
         </Link>
@@ -31,7 +31,7 @@ export default async function PostPage({
             components={portableTextComponents}
           />
         </div>
-      </main>
+      </div>
     </Container>
   );
 }
