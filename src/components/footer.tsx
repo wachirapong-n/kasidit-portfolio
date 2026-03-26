@@ -1,7 +1,6 @@
 import { FOOTER } from "@/app/server/queries/queries";
 import { client } from "@/sanity/client";
 import { SanityDocument } from "next-sanity";
-import Container from "./container";
 
 const options = { next: { revalidate: 30 } };
 
@@ -9,7 +8,7 @@ export default async function Footer() {
   const footer = await client.fetch<SanityDocument>(FOOTER, {}, options);
   const footerData = footer[0];
   return (
-    <Container className="bg-[#171717] text-lg text-white">
+    <nav className="relative bg-[#171717] text-white flex w-full py-3 px-5 sm:px-10 md:px-15 lg:px-20 justify-between">
       <div className="flex flex-col w-full">
         <p>{footerData.name}</p>
         <p>{footerData.addition}</p>
@@ -20,6 +19,6 @@ export default async function Footer() {
         <p>{footerData.line}</p>
         <p>{footerData.tel}</p>
       </div>
-    </Container>
+    </nav>
   );
 }

@@ -34,8 +34,7 @@ export default function RootLayout({
     <html lang="en" className={`${noto.variable}  h-full antialiased`}>
       <body className="min-h-full flex flex-col">
         <Navbar />
-        <main className="flex grow bg-[#ffffff] max-sm:px-5">{children}</main>
-
+        <main className="flex grow bg-[#ffffff] px-5 ">{children}</main>
         <Footer />
       </body>
     </html>
