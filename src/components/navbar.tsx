@@ -15,26 +15,25 @@ export default async function Navbar() {
     options,
   );
   const navQuery = await client.fetch<SanityDocument[]>(NAV_QUERY, {}, options);
-
   return (
-    <nav className="relative bg-primary items-center text-[#F9FAFB] flex w-full py-3 px-5 sm:px-10 md:px-15 lg:px-20 justify-between">
+    <nav className="relative bg-nav-bg-primary items-center text-nav-text-primary flex w-full py-3 px-5 sm:px-10 md:px-15 lg:px-20 justify-between">
       <div className="flex flex-1 gap-5 items-center">
-        <div className="flex w-8 h-8">
+        <div className="flex">
           <Link href={`/`}>
             <img
               src={urlFor(logo[0].logo).url()}
-              className="object-cover h-full w-full"
+              className="object-cover h-8 w-8 xl:w-10 xl:h-10 2xl:w-12 2xl:h-12"
               alt="logo"
             />
           </Link>
         </div>
         <Link href={`/`}>
-          <div className="items-center gap-1 font-medium hover:text-accent transition-colors py-2">
+          <div className="items-center gap-1 font-medium hover:text-accent transition-colors py-2 xl:text-lg 2xl:text-xl">
             {webName[0].websiteName}
           </div>
         </Link>
       </div>
-      <div className="hidden md:flex flex-1 gap-5 justify-end">
+      <div className="hidden md:flex flex-1 gap-5 justify-end xl:text-lg 2xl:text-xl">
         <Link
           href={`/`}
           className="font-medium hover:text-accent transition-colors"

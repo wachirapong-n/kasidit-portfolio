@@ -24,7 +24,9 @@
   --color-text-primary: #0f172a;
   --color-text-secondary: #475569;
   --color-text-muted: #94a3b8;
-}
+  --color-nav-bg-primary: #02284c;
+  --color-nav-text-primary: #F9FAFB;
+}   
 
 @media (prefers-color-scheme: dark) {
   :root {
