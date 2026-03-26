@@ -18,7 +18,7 @@ export default function Card({
   return (
     <div
       className={cn(
-        "group mx-auto min-w-60 max-w-7xl flex flex-col py-4 px-4 md:px-6 rounded-3xl bg-[#ffffff] w-full gap-5 transition-all duration-300 hover:bg-red-50 ",
+        "group mx-auto min-w-60 max-w-7xl flex flex-col py-4 px-4 md:px-6 rounded-3xl w-full gap-5 transition-all duration-300 bg-surface border border-gray-200 shadow-xl",
         className,
       )}
     >

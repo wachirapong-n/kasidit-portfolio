@@ -8,7 +8,7 @@ export default async function Footer() {
   const footer = await client.fetch<SanityDocument>(FOOTER, {}, options);
   const footerData = footer[0];
   return (
-    <nav className="relative bg-[#020617] text-[#E2E8F0] flex w-full py-3 px-5 sm:px-10 md:px-15 lg:px-20 justify-between">
+    <nav className="relative bg-primary text-[#E2E8F0] flex w-full py-3 px-5 sm:px-10 md:px-15 lg:px-20 justify-between">
       <div className="flex flex-col w-full">
         <p>{footerData.name}</p>
         <p>{footerData.addition}</p>

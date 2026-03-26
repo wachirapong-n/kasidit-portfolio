@@ -10,9 +10,9 @@ const options = { next: { revalidate: 30 } };
 export default async function IndexPage() {
   const posts = await client.fetch<SanityDocument[]>(POSTS_QUERY, {}, options);
   return (
-    <Container className="justify-center  py-3 flex flex-col gap-4 items-center max-sm:px-0 overflow-hidden ">
+    <Container className="justify-center pt-10 pb-15 flex flex-col gap-8 items-center max-sm:px-0 overflow-hidden ">
       {posts?.map((post) => (
-        <div key={post._id} className="flex flex-col gap-y-4 w-full">
+        <div key={post._id} className="flex flex-col w-full">
           <CardLink
             title={post.title}
             description={post.description}

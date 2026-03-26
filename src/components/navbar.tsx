@@ -17,7 +17,7 @@ export default async function Navbar() {
   const navQuery = await client.fetch<SanityDocument[]>(NAV_QUERY, {}, options);
 
   return (
-    <nav className="relative bg-[#0F172A] items-center text-[#F9FAFB] flex w-full py-3 px-5 sm:px-10 md:px-15 lg:px-20 justify-between">
+    <nav className="relative bg-primary items-center text-[#F9FAFB] flex w-full py-3 px-5 sm:px-10 md:px-15 lg:px-20 justify-between">
       <div className="flex flex-1 gap-5 items-center">
         <div className="flex w-8 h-8">
           <Link href={`/`}>
@@ -29,7 +29,7 @@ export default async function Navbar() {
           </Link>
         </div>
         <Link href={`/`}>
-          <div className="items-center gap-1 font-medium hover:text-[#3B82F6] transition-colors py-2">
+          <div className="items-center gap-1 font-medium hover:text-accent transition-colors py-2">
             {webName[0].websiteName}
           </div>
         </Link>
@@ -37,7 +37,7 @@ export default async function Navbar() {
       <div className="hidden md:flex flex-1 gap-5 justify-end">
         <Link
           href={`/`}
-          className="font-medium hover:text-[#3B82F6] transition-colors"
+          className="font-medium hover:text-accent transition-colors"
         >
           <div className="items-center gap-1 font-medium py-2">หน้าแรก</div>
         </Link>
@@ -46,7 +46,7 @@ export default async function Navbar() {
             key={category._id}
             className="group relative flex items-center h-full"
           >
-            <button className="flex items-center gap-1 font-medium hover:text-[#3B82F6] transition-colors py-2">
+            <button className="flex items-center gap-1 font-medium hover:text-accent transition-colors py-2">
               {category.title}
               <svg
                 className="w-4 h-4 transition-transform group-hover:rotate-180"
@@ -68,7 +68,7 @@ export default async function Navbar() {
                   <Link
                     key={post.slug}
                     href={`/${post.slug}`}
-                    className="block rounded-md px-4 py-2 text-sm text-gray-600 hover:bg-blue-50 hover:text-blue-700"
+                    className="block rounded-md px-4 py-2 text-sm text-gray-600 hover:bg-blue-50 hover:text-accent"
                   >
                     {post.title}
                   </Link>
