@@ -2,7 +2,7 @@ import { cn } from "@/libs/utils";
 
 export interface CardProps {
   title: string;
-  imageUrl?: string;
+  imageUrl: string;
   description?: string;
   className?: string;
   arrow?: boolean;
@@ -18,18 +18,20 @@ export default function Card({
   return (
     <div
       className={cn(
-        "group mx-auto min-w-60 max-w-7xl flex flex-col p-4 md:p-6 rounded-3xl w-full gap-5 transition-all duration-300 bg-surface border border-gray-200 shadow-xl hover:bg-blue-50",
+        "mx-auto min-w-60 max-w-7xl flex flex-col p-4 md:p-6 rounded-3xl w-full gap-5 transition-all duration-300 bg-surface border border-gray-200 shadow-xl hover:bg-blue-50 hover:scale-105",
         className,
       )}
     >
       <div className="flex justify-between items-center">
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-2 justify-center">
           <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-semibold">
             {title}
           </h2>
-          <p className="text-xs md:text-base lg:text-xl xl:text-2xl">
-            {description ?? ""}
-          </p>
+          {description && (
+            <p className="text-xs md:text-base lg:text-xl xl:text-2xl">
+              {description}
+            </p>
+          )}
         </div>
         {arrow && (
           <svg
@@ -47,17 +49,13 @@ export default function Card({
           </svg>
         )}
       </div>
-      {imageUrl && (
-        <div className="overflow-x-hidden rounded-2xl ">
-          <img
-            src={imageUrl}
-            className={cn(
-              "object-cover min-h-30 max-h-150 w-full rounded-2xl",
-              "transition-transform duration-500 ease-out group-hover:-translate-y-2",
-            )}
-          />    
-        </div>
-      )}
+
+      <div className="overflow-x-hidden rounded-2xl ">
+        <img
+          src={imageUrl}
+          className={cn("object-cover min-h-30 max-h-150 w-full rounded-2xl")}
+        />
+      </div>
     </div>
   );
 }

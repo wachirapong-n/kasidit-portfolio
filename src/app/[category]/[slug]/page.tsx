@@ -4,11 +4,11 @@ import { portableTextComponents } from "@/app/server/serializers/portableTextSer
 import Container from "@/components/container";
 import { client } from "@/sanity/client";
 import Link from "next/link";
-import { POST } from "../server/queries/queries";
+import { POST } from "../../server/queries/queries";
 
 const options = { next: { revalidate: 30 } };
 
-export default async function PostPage({
+export default async function Page({
   params,
 }: {
   params: Promise<{ slug: string }>;

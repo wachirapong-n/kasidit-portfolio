@@ -3,13 +3,13 @@ import { urlFor } from "@/libs/utils";
 export const portableTextComponents = {
   block: {
     h1: ({ children }: any) => (
-      <h1 className="text-3xl font-bold mb-4">{children}</h1>
+      <h1 className="text-3xl font-bold">{children}</h1>
     ),
     h2: ({ children }: any) => (
-      <h2 className="text-2xl font-semibold mb-3">{children}</h2>
+      <h2 className="text-2xl font-semibold">{children}</h2>
     ),
     normal: ({ children }: any) => (
-      <p className="leading-relaxed mb-4">{children}</p>
+      <p className="leading-relaxed">{children}</p>
     ),
   },
 

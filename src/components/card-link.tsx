@@ -14,7 +14,7 @@ export default function CardLink({
   arrow = false,
 }: CardLinkProps) {
   return (
-    <Link href={`/${linkUrl}`} className="mx-auto w-full max-w-7xl block rounded-3xl">
+    <Link href={`/${linkUrl}`} className="mx-auto w-full max-w-7xl block rounded-3xl ">
       <Card
         title={title}
         description={description}

@@ -16,7 +16,7 @@ export default async function Navbar() {
   );
   const navQuery = await client.fetch<SanityDocument[]>(NAV_QUERY, {}, options);
   return (
-    <nav className="relative bg-nav-bg-primary items-center text-nav-text-primary flex w-full py-3 px-5 sm:px-10 md:px-15 lg:px-20 justify-between">
+    <nav className="relative bg-nav-bg-primary items-center text-nav-text-primary flex w-full py-3 px-5 sm:px-10 md:px-15 lg:px-20 justify-between z-50">
       <div className="flex flex-1 gap-5 items-center">
         <div className="flex">
           <Link href={`/`}>
