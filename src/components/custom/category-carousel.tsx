@@ -1,6 +1,6 @@
 import { Category } from "@/app/server/models/model-types";
 import { CATEGOTY } from "@/app/server/queries/queries";
-import CardLink from "@/components/card-link";
+import CardLink from "@/components/custom/card-link";
 import {
   Carousel,
   CarouselContent,

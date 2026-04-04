@@ -3,7 +3,7 @@ import { urlFor } from "@/libs/utils";
 import { client } from "@/sanity/client";
 import { SanityDocument } from "next-sanity";
 import Link from "next/link";
-import NavbarBurger from "./navbar-burger";
+import NavbarBurger from "./custom/navbar-burger";
 
 const options = { next: { revalidate: 30 } };
 

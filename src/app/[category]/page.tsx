@@ -1,5 +1,5 @@
-import CardLink from "@/components/card-link";
 import Container from "@/components/container";
+import CardLink from "@/components/custom/card-link";
 import { client } from "@/sanity/client";
 import Link from "next/link";
 import { PostCategory } from "../server/models/model-types";
