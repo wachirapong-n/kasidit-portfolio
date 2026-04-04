@@ -29,13 +29,16 @@ export type Category = {
 };
 
 export type PostCategory = Category & {
-  description : string;
+  description: string;
 };
 
 export type Profile = {
   name: string;
   introduction: any;
   imageUrl: string;
-  slogan : string;
+  slogan: string;
+};
 
-}
+export type HomeCategory = {
+  name: string;
+};

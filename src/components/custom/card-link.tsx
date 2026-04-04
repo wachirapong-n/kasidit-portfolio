@@ -5,26 +5,13 @@ interface CardLinkProps extends CardProps {
   linkUrl: string;
 }
 
-export default function CardLink({
-  title,
-  imageUrl,
-  description,
-  className,
-  linkUrl,
-  arrow = false,
-}: CardLinkProps) {
+export default function CardLink({ linkUrl, ...cardProps }: CardLinkProps) {
   return (
     <Link
       href={`/${linkUrl}`}
-      className="mx-auto w-full max-w-7xl block rounded-3xl "
+      className="relative mx-auto w-full max-w-7xl block rounded-3xl group hover:z-50"
     >
-      <Card
-        title={title}
-        description={description}
-        imageUrl={imageUrl}
-        arrow={arrow}
-        className={className}
-      />
+      <Card {...cardProps} />
     </Link>
   );
 }

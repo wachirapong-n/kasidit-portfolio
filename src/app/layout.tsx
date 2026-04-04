@@ -35,7 +35,7 @@ export default function RootLayout({
     <html lang="en" className={cn("h-full", "antialiased", noto.variable)}>
       <body className="min-h-full flex flex-col">
         <Navbar />
-        <main className="grow bg-primary flex flex-col items-stretch">
+        <main className="grow bg-white flex flex-col items-stretch">
           {children}
         </main>
         <Footer />

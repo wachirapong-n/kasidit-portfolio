@@ -4,14 +4,20 @@ import CategoryCarousel from "@/components/custom/category-carousel";
 import { cn } from "@/libs/utils";
 import { client } from "@/sanity/client";
 import { PortableText } from "next-sanity";
-import { Profile } from "./server/models/model-types";
-import { PROFILE } from "./server/queries/queries";
+import Image from "next/image";
+import { HomeCategory, Profile } from "./server/models/model-types";
+import { HOME_CATEGORY, PROFILE } from "./server/queries/queries";
 import { portableTextComponents } from "./server/serializers/portableTextSerializer";
 
 const options = { next: { revalidate: 30 } };
 
 export default async function Home() {
   const profile = await client.fetch<Profile>(PROFILE, {}, options);
+  const homeCategory = await client.fetch<HomeCategory>(
+    HOME_CATEGORY,
+    {},
+    options,
+  );
 
   return (
     <>
@@ -53,7 +59,29 @@ export default async function Home() {
         </div>
         <div className="w-3/4 mx-auto h-0.5 bg-white"></div>
       </Container>
-      <CategoryCarousel />
+      <CategoryCarousel>
+        <div className="relative flex items-center justify-center w-full">
+          <div className="absolute z-0 w-60 -top-8 sm:-top-9 md:w-70 md:-top-10 lg:w-80 lg:-top-11 2xl:w-100 2xl:-top-13">
+            <Image
+              src="/home-category.svg"
+              className="object-contain w-full"
+              alt=""
+              width={350}
+              height={150}
+            />
+          </div>
+          <div className="relative z-10 bg-white rounded-2xl px-2 uppercase">
+            <h2
+              className={cn(
+                "text-[36px] sm:text-4xl md:text-5xl lg:text-6xl 2xl:text-7xl",
+                "text-primary text-center font-semibold tracking-tight ",
+              )}
+            >
+              {homeCategory.name}
+            </h2>
+          </div>
+        </div>
+      </CategoryCarousel>
     </>
   );
 }

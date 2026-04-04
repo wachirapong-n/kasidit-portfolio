@@ -29,3 +29,4 @@ export const POST_CATEGORY = `*[_type == "post" && category->slug.current == $ca
 _id, title, "imageUrl": image.asset->url, description, slug
 }`;
 export const PROFILE = `*[_type == "profile"][0]{_id, name,"imageUrl": image.asset->url, introduction,  slogan}`;
+export const HOME_CATEGORY = `*[_type == "homeCategory"][0]{name}`
