@@ -21,7 +21,7 @@ export default async function CategoryCarousel({
 }) {
   const categories = await client.fetch<Category[]>(CATEGOTY, {}, options);
   return (
-    <Container className="pt-10 md:pt-11 lg:pt-13 2xl:pt-15 pb-15 gap-4 sm:gap-6 md:gap-8 2xl:gap-12 max-sm:px-5 flex-col items-center z-10 relative overflow-visible">
+    <Container className="md:pt-11 lg:pt-13 2xl:pt-15 pb-15 gap-4 sm:gap-6 md:gap-8 2xl:gap-12 max-sm:px-5 flex-col items-center z-10 relative overflow-visible">
       {children}
       <Carousel
         opts={{
@@ -29,7 +29,7 @@ export default async function CategoryCarousel({
         }}
         className="w-full border-5 sm:p-2 md:p-4 lg:p-6 xl:p-10 rounded-[60px] border-secondary lg:overflow-visible overflow-hidden max-w-400"
       >
-        <CarouselContent className="-ml-2 md:-ml-4">
+        <CarouselContent className="-ml-2 md:-ml-4 p-1">
           {categories?.map((category) => (
             <CarouselItem
               key={category._id}

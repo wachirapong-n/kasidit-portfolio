@@ -15,18 +15,16 @@ export default async function Page({
   const resolvedParams = await params;
   const category = resolvedParams.category;
   const decodedSlug = decodeURIComponent(category);
-  const posts = await client.fetch<PostCategory[]>(
-    POST_CATEGORY,
-    { category: decodedSlug },
-    options,
-  );
-  const categoryName = await client.fetch<String>(
-    CURRENT_CATEGORY,
-    { category: decodedSlug },
-    options,
-  );
+  const [posts, categoryName] = await Promise.all([
+    client.fetch<PostCategory[]>(
+      POST_CATEGORY,
+      { category: decodedSlug },
+      options,
+    ),
+    client.fetch<String>(CURRENT_CATEGORY, { category: decodedSlug }, options),
+  ]);
   return (
-    <Container className="justify-center pt-10 pb-15 gap-8 max-sm:px-0 flex-col">
+    <Container className="justify-center pb-15 gap-8 max-sm:px-0 flex-col">
       <Link href="/" className="hover:underline">
         ← ย้อนกลับ
       </Link>

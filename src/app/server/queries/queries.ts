@@ -7,6 +7,7 @@ export const CURRENT_CATEGORY = `*[_type == "category" && slug.current == $categ
 export const NAV_QUERY = `*[_type == "category" && !(_id in path("drafts.**"))] | order(order asc) {
   _id,
   title,
+  slug,
   "posts": *[_type == "post" && !(_id in path("drafts.**")) && references(^._id)] {
     _id,
     title,
@@ -29,4 +30,4 @@ export const POST_CATEGORY = `*[_type == "post" && category->slug.current == $ca
 _id, title, "imageUrl": image.asset->url, description, slug
 }`;
 export const PROFILE = `*[_type == "profile"][0]{_id, name,"imageUrl": image.asset->url, introduction,  slogan}`;
-export const HOME_CATEGORY = `*[_type == "homeCategory"][0]{name}`
+export const HOME_CATEGORY = `*[_type == "homeCategory"][0]{name}`;

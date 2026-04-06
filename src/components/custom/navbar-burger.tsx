@@ -1,13 +1,12 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
+import { useState } from "react";
 
 export default function NavbarBurger({ navQuery }: { navQuery: any[] }) {
   const [isOpen, setIsOpen] = useState(false);
-
   return (
-    <div className="md:hidden">
+    <div className="xl:hidden">
       <button onClick={() => setIsOpen(!isOpen)} className="p-2">
         <svg
           className="w-6 h-6"

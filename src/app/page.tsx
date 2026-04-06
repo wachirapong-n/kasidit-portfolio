@@ -12,23 +12,20 @@ import { portableTextComponents } from "./server/serializers/portableTextSeriali
 const options = { next: { revalidate: 30 } };
 
 export default async function Home() {
-  const profile = await client.fetch<Profile>(PROFILE, {}, options);
-  const homeCategory = await client.fetch<HomeCategory>(
-    HOME_CATEGORY,
-    {},
-    options,
-  );
-
+  const [profile, homeCategory] = await Promise.all([
+    client.fetch<Profile>(PROFILE, {}, options),
+    client.fetch<HomeCategory>(HOME_CATEGORY, {}, options),
+  ]);
   return (
     <>
-      <Container className="pt-10 pb-15 gap-8 max-sm:px-0 flex-col items-center z-10 bg-[linear-gradient(90deg,rgba(10,31,68,1)_0%,rgba(26,27,30,1)_100%)]">
+      <Container className="pb-15 gap-8 max-sm:px-0 flex-col items-center z-10 bg-[linear-gradient(90deg,rgba(10,31,68,1)_0%,rgba(26,27,30,1)_100%)]">
         <div className="flex gap-4 sm:gap-4 2xl:gap-30 justify-between w-full mx-auto container flex-col xl:flex-row xl:gap-15">
           <AnimationSlide start="-100%" className="flex justify-center">
             <img
               src={profile.imageUrl}
               className={cn(
-                "xl:max-h-150 object-contain rounded-2xl h-auto max-h-90  md:max-h-110 lg:max-h-125 2xl:max-h-175",
-                "drop-shadow-[0_0_60px_rgba(111,153,223,1)]",
+                "xl:max-h-150 object-contain rounded-2xl h-auto max-h-90 md:max-h-110 lg:max-h-125 2xl:max-h-175",
+                "drop-shadow-[0_0_60px_rgba(111,153,223,1)] hover:scale-105 transition-all",
               )}
             />
           </AnimationSlide>
