@@ -52,10 +52,14 @@ export default function NavbarMenu({
             key={category._id}
             className="group relative flex items-center h-full group-hover/nav:text-primary hover:underline px-2"
           >
-            <button
+            <Link
+              href={`/${category.slug.current}`}
               onClick={(e) => {
-                e.stopPropagation();
-                setOpen(open === category._id ? null : category._id);
+                if (window.innerWidth < 1280) {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  setOpen(open === category._id ? null : category._id);
+                }
               }}
               className="flex items-center gap-1 font-medium transition-colors "
             >
@@ -73,12 +77,12 @@ export default function NavbarMenu({
                   d="M19 9l-7 7-7-7"
                 />
               </svg>
-            </button>
+            </Link>
             <div
               className={cn(
                 "absolute z-50 right-0 top-full w-48 rounded-lg border border-gray-100 bg-white p-2 shadow-xl ",
-                "hidden group-hover:block",
-                open === category._id && "block",
+                "hidden xl:group-hover:block",
+                open === category._id && "block xl:hidden",
               )}
             >
               {category.posts && category.posts.length > 0 ? (
@@ -87,6 +91,7 @@ export default function NavbarMenu({
                     key={post.slug}
                     href={`/${category.slug.current}/${post.slug}`}
                     className="block rounded-md px-4 py-2 text-sm text-gray-600 hover:bg-blue-50 hover:underline"
+                    onClick={() => setOpen(null)}
                   >
                     {post.title}
                   </Link>
