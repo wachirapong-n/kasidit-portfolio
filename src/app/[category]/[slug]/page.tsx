@@ -21,8 +21,8 @@ export default async function Page({
   return (
     <Container className="justify-center ">
       <div className="min-h-screen w-full p-8 flex flex-col gap-4">
-        <h1 className="text-4xl font-bold mb-8">{post?.title ?? ""}</h1>
-        <div className="prose text-3xl">
+        <h1 className="text-4xl font-bold ">{post?.title ?? ""}</h1>
+        <div className="prose text-2xl">
           <PortableText
             value={post?.content}
             components={portableTextComponents}
