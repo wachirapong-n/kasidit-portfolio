@@ -43,7 +43,7 @@ export default async function CategoryCarousel({
                   title={category.title}
                   imageUrl={category.imageUrl ?? "/placeholder.png"}
                   linkUrl={category.slug.current}
-                  className="flex aspect-square items-center justify-center rounded-[45px] hover:bg-primary "
+                  className="flex aspect-square items-center justify-center rounded-[45px] hover:bg-primary"
                   titleOntop={false}
                 />
               </div>

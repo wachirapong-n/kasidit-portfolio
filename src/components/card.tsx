@@ -47,11 +47,8 @@ export default function Card({
       )}
     >
       {titleOntop && contentSection}
-      <div className="overflow-hidden rounded-2xl grow flex justify-center items-end">
-        <img
-          src={imageUrl}
-          className={cn("object-cover 2xl:object-contain min-h-30 h-full w-full rounded-2xl")}
-        />
+      <div className="overflow-hidden rounded-2xl w-full aspect-square">
+        <img src={imageUrl} className="w-full h-full object-cover" />
       </div>
 
       {!titleOntop && contentSection}
