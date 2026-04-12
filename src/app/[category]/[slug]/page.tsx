@@ -19,9 +19,11 @@ export default async function Page({
   const post = await client.fetch(POST, { slug: decodedSlug }, options);
 
   return (
-    <Container className="justify-center ">
-      <div className="min-h-screen w-full p-8 flex flex-col gap-4">
-        <h1 className="text-4xl font-bold ">{post?.title ?? ""}</h1>
+    <Container className="justify-center max-sm:px-6 pb-15">
+      <div className="min-h-screen w-full xl:p-8 flex flex-col gap-4">
+        <h1 className="text-4xl font-bold text-[36px] sm:text-4xl md:text-5xl lg:text-6xl text-primary tracking-tight">
+          {post?.title ?? ""}
+        </h1>
         <div className="prose text-2xl">
           <PortableText
             value={post?.content}

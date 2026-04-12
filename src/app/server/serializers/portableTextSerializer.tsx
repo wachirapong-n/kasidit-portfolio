@@ -3,25 +3,45 @@ import { urlFor } from "@/libs/utils";
 export const portableTextComponents = {
   block: {
     h1: ({ children }: any) => (
-      <h1 className="text-6xl font-bold mt-4">{children}</h1>
+      <h1 className="font-bold mt-4 text-[36px] sm:text-4xl md:text-5xl lg:text-6xl 2xl:text-7xl leading-tight">
+        {children}
+      </h1>
     ),
+
     h2: ({ children }: any) => (
-      <h2 className="text-5xl font-semibold mt-4">{children}</h2>
+      <h2 className="font-semibold mt-4 text-[28px] sm:text-3xl md:text-4xl lg:text-5xl 2xl:text-6xl leading-snug">
+        {children}
+      </h2>
     ),
+
     h3: ({ children }: any) => (
-      <h3 className="text-4xl font-semibold mt-4">{children}</h3>
+      <h3 className="font-semibold mt-4 text-[24px] sm:text-2xl md:text-3xl lg:text-4xl 2xl:text-5xl">
+        {children}
+      </h3>
     ),
+
     h4: ({ children }: any) => (
-      <h4 className="text-3xl font-medium mt-4">{children}</h4>
+      <h4 className="font-medium mt-4 text-[20px] sm:text-xl md:text-2xl lg:text-3xl 2xl:text-4xl">
+        {children}
+      </h4>
     ),
+
     h5: ({ children }: any) => (
-      <h5 className="text-2xl font-medium mt-4">{children}</h5>
+      <h5 className="font-medium mt-4 text-[18px] sm:text-lg md:text-xl lg:text-2xl 2xl:text-3xl">
+        {children}
+      </h5>
     ),
+
     h6: ({ children }: any) => (
-      <h6 className="text-xl font-normal mt-4">{children}</h6>
+      <h6 className="font-normal mt-4 text-[16px] sm:text-base md:text-lg lg:text-xl 2xl:text-2xl">
+        {children}
+      </h6>
     ),
+
     normal: ({ children }: any) => (
-      <p className="leading-relaxed mt-4 text-justify indent-10">{children}</p>
+      <p className="leading-relaxed mt-4 text-justify indent-8 sm:indent-10 text-[16px] sm:text-base md:text-lg lg:text-xl 2xl:text-2xl">
+        {children}
+      </p>
     ),
   },
 

@@ -24,8 +24,8 @@ export default async function Page({
     client.fetch<String>(CURRENT_CATEGORY, { category: decodedSlug }, options),
   ]);
   return (
-    <Container className="justify-center pb-15 gap-8 max-sm:px-0 flex-col relative z-0">
-      <h1 className="text-6xl font-bold text-center">{categoryName}</h1>
+    <Container className="justify-center pb-15 gap-4 xl:gap-8 max-sm:px-4 flex-col relative z-0 ">
+      <h1 className="font-bold text-center text-[36px] sm:text-4xl md:text-5xl lg:text-6xl text-primary tracking-tight">{categoryName}</h1>
       {posts.map((post) => (
         <div key={post._id} className="w-full flex flex-col gap-4">
           <CardLink
