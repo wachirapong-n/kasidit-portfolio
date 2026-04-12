@@ -85,7 +85,7 @@ export default function NavbarMenu({
                 category.posts.map((post: any) => (
                   <Link
                     key={post.slug}
-                    href={`${category.slug.current}/${post.slug}`}
+                    href={`/${category.slug.current}/${post.slug}`}
                     className="block rounded-md px-4 py-2 text-sm text-gray-600 hover:bg-blue-50 hover:underline"
                   >
                     {post.title}
