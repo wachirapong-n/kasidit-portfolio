@@ -24,7 +24,7 @@ export default async function Page({
     client.fetch<String>(CURRENT_CATEGORY, { category: decodedSlug }, options),
   ]);
   return (
-    <Container className="justify-center pb-15 gap-8 max-sm:px-0 flex-col">
+    <Container className="justify-center pb-15 gap-8 max-sm:px-0 flex-col relative z-0">
       <h1 className="text-6xl font-bold text-center">{categoryName}</h1>
       {posts.map((post) => (
         <div key={post._id} className="w-full flex flex-col gap-4">
@@ -33,6 +33,7 @@ export default async function Page({
             imageUrl={post.imageUrl}
             description={post.description}
             linkUrl={`${category}/${post.slug.current}`}
+            className="hover:scale-102 max-h-300 hover:z-4"
           />
         </div>
       ))}
