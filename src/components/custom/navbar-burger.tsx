@@ -31,36 +31,48 @@ export default function NavbarBurger({ navQuery }: { navQuery: any[] }) {
           )}
         </svg>
       </button>
-      {isOpen && (
-        <div className="absolute left-0 top-full w-full bg-[#171717] border-t border-gray-800 p-5 flex flex-col gap-4 z-50">
-          <Link
-            href="/"
-            className="hover:text-blue-600"
-            onClick={() => setIsOpen(false)}
-          >
-            หน้าแรก
-          </Link>
-          {navQuery?.map((category) => (
-            <div key={category._id} className="flex flex-col gap-2">
-              <div className="text-gray-400 text-sm font-bold uppercase">
+
+      <div
+        className={`
+    absolute left-0 top-full w-full bg-primary border-t border-gray-800 p-5 flex flex-col gap-4 z-50
+    transform transition-all duration-300 ease-in-out
+    ${isOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-2 pointer-events-none"}
+  `}
+      >
+        <Link
+          href="/"
+          className="text-sm sm:text-base md:text-lg lg:text-xl"
+          onClick={() => setIsOpen(false)}
+        >
+          หน้าแรก
+        </Link>
+        {navQuery?.map((category) => (
+          <div key={category._id} className="flex flex-col gap-2">
+            <div className="text-gray-400 text-sm sm:text-base md:text-lg lg:text-xl font-bold uppercase">
+              <Link
+                key={category._id}
+                href={`/${category.slug.current}`}
+                className="text-sm sm:text-base md:text-lg lg:text-xl"
+                onClick={() => setIsOpen(false)}
+              >
                 {category.title}
-              </div>
-              <div className="pl-4 flex flex-col gap-2">
-                {category.posts?.map((post: any) => (
-                  <Link
-                    key={post.slug}
-                    href={`/${post.slug}`}
-                    className="text-sm hover:text-blue-600"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {post.title}
-                  </Link>
-                ))}
-              </div>
+              </Link>
             </div>
-          ))}
-        </div>
-      )}
+            <div className="pl-4 flex flex-col gap-2">
+              {category.posts?.map((post: any) => (
+                <Link
+                  key={post.slug}
+                  href={`/${category.slug.current}/${post.slug}`}
+                  className="text-sm sm:text-base md:text-lg lg:text-xl"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {post.title}
+                </Link>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
