@@ -33,13 +33,13 @@ export const portableTextComponents = {
     ),
 
     h6: ({ children }: any) => (
-      <h6 className="font-normal mt-4 text-[16px] sm:text-base md:text-lg lg:text-xl 2xl:text-2xl">
+      <h6 className="font-normal mt-4 text-base md:text-lg lg:text-xl 2xl:text-2xl">
         {children}
       </h6>
     ),
 
     normal: ({ children }: any) => (
-      <p className="leading-relaxed mt-4 text-justify indent-8 sm:indent-10 text-[16px] sm:text-base md:text-lg lg:text-xl 2xl:text-2xl">
+      <p className="leading-relaxed mt-4 text-justify indent-8 text-base md:text-lg lg:text-xl 2xl:text-2xl">
         {children}
       </p>
     ),
@@ -55,8 +55,13 @@ export const portableTextComponents = {
   },
 
   listItem: {
-    bullet: ({ children }: any) => <li>{children}</li>,
-    number: ({ children }: any) => <li>{children}</li>,
+    bullet: ({ children }: any) => (
+      <li className="leading-relaxed">{children}</li>
+    ),
+
+    number: ({ children }: any) => (
+      <li className="leading-relaxed">{children}</li>
+    ),
   },
 
   marks: {
@@ -68,6 +73,12 @@ export const portableTextComponents = {
       <a href={value?.href} className="text-blue-500 underline">
         {children}
       </a>
+    ),
+    underline: ({ children }: any) => (
+      <span className="underline">{children}</span>
+    ),
+    "strike-through": ({ children }: any) => (
+      <span className="line-through">{children}</span>
     ),
   },
 
@@ -121,5 +132,86 @@ export const portableTextComponents = {
         </div>
       );
     },
+  },
+};
+
+export const portableTextIntroduction = {
+  block: {
+    h1: ({ children }: any) => (
+      <h1 className="font-bold mt-4 text-[36px] sm:text-4xl md:text-5xl lg:text-6xl 2xl:text-7xl leading-tight">
+        {children}
+      </h1>
+    ),
+
+    h2: ({ children }: any) => (
+      <h2 className="font-semibold mt-4 text-[28px] sm:text-3xl md:text-4xl lg:text-5xl 2xl:text-6xl leading-snug">
+        {children}
+      </h2>
+    ),
+
+    h3: ({ children }: any) => (
+      <h3 className="font-semibold mt-4 text-[24px] sm:text-2xl md:text-3xl lg:text-4xl 2xl:text-5xl">
+        {children}
+      </h3>
+    ),
+
+    h4: ({ children }: any) => (
+      <h4 className="font-medium mt-4 text-[20px] sm:text-xl md:text-2xl lg:text-3xl 2xl:text-4xl">
+        {children}
+      </h4>
+    ),
+
+    h5: ({ children }: any) => (
+      <h5 className="font-medium mt-4 text-[18px] sm:text-lg md:text-xl lg:text-2xl 2xl:text-3xl">
+        {children}
+      </h5>
+    ),
+
+    h6: ({ children }: any) => (
+      <h6 className="font-normal mt-4 text-[16px] sm:text-base md:text-lg lg:text-xl 2xl:text-2xl">
+        {children}
+      </h6>
+    ),
+
+    normal: ({ children }: any) => (
+      <p className="leading-relaxed mt-4 xl:text-justify indent-8">
+        {children}
+      </p>
+    ),
+  },
+  marks: {
+    strong: ({ children }: any) => (
+      <strong className="font-semibold">{children}</strong>
+    ),
+
+    em: ({ children }: any) => <em className="italic">{children}</em>,
+
+    underline: ({ children }: any) => (
+      <span className="underline">{children}</span>
+    ),
+
+    "strike-through": ({ children }: any) => (
+      <span className="line-through">{children}</span>
+    ),
+  },
+
+  list: {
+    bullet: ({ children }: any) => (
+      <ul className="list-disc ml-6 mt-4 space-y-2">{children}</ul>
+    ),
+
+    number: ({ children }: any) => (
+      <ol className="list-decimal ml-6 mt-4 space-y-2">{children}</ol>
+    ),
+  },
+
+  listItem: {
+    bullet: ({ children }: any) => (
+      <li className="leading-relaxed">{children}</li>
+    ),
+
+    number: ({ children }: any) => (
+      <li className="leading-relaxed">{children}</li>
+    ),
   },
 };

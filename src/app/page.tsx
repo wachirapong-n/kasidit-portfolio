@@ -7,7 +7,7 @@ import { PortableText } from "next-sanity";
 import Image from "next/image";
 import { HomeCategory, Profile } from "./server/models/model-types";
 import { HOME_CATEGORY, PROFILE } from "./server/queries/queries";
-import { portableTextComponents } from "./server/serializers/portableTextSerializer";
+import { portableTextComponents, portableTextIntroduction } from "./server/serializers/portableTextSerializer";
 
 const options = { next: { revalidate: 30 } };
 
@@ -35,10 +35,10 @@ export default async function Home() {
                 <div className="w-7 h-7 sm:h-10 sm:w-10 lg:h-12 lg:w-12 xl:w-18 xl:h-18 flex items-end self-start">
                   <img src="/quote.svg" className="object-cover" />
                 </div>
-                <div className="prose text-justify drop-shadow-[0_0_5px_rgba(255,255,255,1)] text-lg sm:text-xl md:text-2xl lg:text-3xl 2xl:text-4xl">
+                <div className="prose xl:text-justify drop-shadow-[0_0_5px_rgba(255,255,255,1)] text-lg sm:text-xl md:text-2xl lg:text-3xl 2xl:text-4xl">
                   <PortableText
                     value={profile.introduction}
-                    components={portableTextComponents}
+                    components={portableTextIntroduction}
                   />
                 </div>
                 <div className="w-7 h-7 sm:h-10 sm:w-10 lg:h-12 lg:w-12 xl:w-18 xl:h-18 flex rotate-180 items-end justify-end self-end ">
