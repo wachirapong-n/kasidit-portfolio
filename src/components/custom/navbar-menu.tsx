@@ -108,7 +108,7 @@ export default function NavbarMenu({
             <div className="absolute left-0 top-full w-full h-4" />
             <div
               className={cn(
-                "absolute z-50 right-0 top-full translate-y-4 w-48 rounded-lg border border-gray-100 bg-white p-2 shadow-xl",
+                "absolute z-50 right-0 top-full translate-y-4 w-70 rounded-lg border border-gray-100 bg-white p-2 shadow-xl",
                 "hidden xl:group-hover:block",
                 open === category._id && "block xl:hidden",
               )}
@@ -118,7 +118,7 @@ export default function NavbarMenu({
                   <Link
                     key={post.slug}
                     href={`/${category.slug.current}/${post.slug}`}
-                    className="block rounded-md px-4 py-2 text-sm text-gray-600 hover:bg-blue-50 hover:underline"
+                    className="block rounded-md px-4 py-2 text-lg text-gray-600 hover:bg-blue-50 hover:underline"
                     onClick={() => setOpen(null)}
                   >
                     {post.title}
