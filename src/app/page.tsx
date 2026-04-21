@@ -7,7 +7,7 @@ import { PortableText } from "next-sanity";
 import Image from "next/image";
 import { HomeCategory, Profile } from "./server/models/model-types";
 import { HOME_CATEGORY, PROFILE } from "./server/queries/queries";
-import { portableTextComponents, portableTextIntroduction } from "./server/serializers/portableTextSerializer";
+import { portableTextIntroduction } from "./server/serializers/portableTextSerializer";
 
 const options = { next: { revalidate: 30 } };
 
