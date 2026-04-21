@@ -24,7 +24,7 @@ export default async function Navbar() {
   border-[5px] border-r-0 border-white bg-white z-0
   scale-x-0 opacity-0
   transition-all duration-500 ease-out
-  group-hover/nav:scale-x-[1.05] group-hover/nav:opacity-100"
+  xl:group-hover/nav:scale-x-[1.05] xl:group-hover/nav:opacity-100"
         />
 
         <div
@@ -32,7 +32,7 @@ export default async function Navbar() {
   border-[5px] border-l-0 border-white bg-white z-0
   scale-x-0 opacity-0
   transition-all duration-500 ease-out
-  group-hover/nav:scale-x-[1.05] group-hover/nav:opacity-100"
+  xl:group-hover/nav:scale-x-[1.05] xl:group-hover/nav:opacity-100"
         />
         <NavbarMenu
           logo={logo[0].logo}
