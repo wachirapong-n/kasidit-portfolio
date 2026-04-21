@@ -37,7 +37,7 @@ export default async function Page({
             imageUrl={post.imageUrl}
             description={post.description}
             linkUrl={`${category}/${post.slug.current}`}
-            className="hover:scale-102 max-h-300 hover:z-4 items-center"
+            className="hover:scale-102 max-h-300 hover:z-4 items-center max-md:px-5 max-md:py-4"
           />
         </div>
       ))}
