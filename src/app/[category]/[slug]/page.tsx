@@ -1,7 +1,9 @@
 import { PortableText } from "next-sanity";
 
 import { portableTextComponents } from "@/app/server/serializers/portableTextSerializer";
+import BackButton from "@/components/back-button";
 import Container from "@/components/container";
+import ScrollToTopButton from "@/components/scroll-to-top-button";
 import { client } from "@/sanity/client";
 import { POST } from "../../server/queries/queries";
 
@@ -20,6 +22,7 @@ export default async function Page({
   return (
     <Container className="justify-center max-sm:px-6 pb-15">
       <div className="min-h-screen w-full xl:p-8 flex flex-col gap-4">
+        <BackButton />
         <h1 className="text-2xl font-bold sm:text-3xl md:text-4xl lg:text-5xl text-primary tracking-tight">
           {post?.title ?? ""}
         </h1>
@@ -30,6 +33,7 @@ export default async function Page({
           />
         </div>
       </div>
+      <ScrollToTopButton />
     </Container>
   );
 }
